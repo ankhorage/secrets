@@ -1,0 +1,24 @@
+[
+  {
+    "name": "CAPABILITIES",
+    "title": null,
+    "description": "Publish provider-neutral, value-free secret metadata operations for discovery and binding.",
+    "isReadme": false,
+    "see": [],
+    "security": [],
+    "kind": "value",
+    "modulePath": "src/capabilities/index.ts",
+    "sourceLocation": {
+      "filePath": "src/capabilities/index.ts",
+      "line": 4,
+      "column": 14
+    },
+    "exportPaths": [
+      "src/capabilities/index.ts"
+    ],
+    "relatedSymbols": [],
+    "signatures": [],
+    "members": [],
+    "structuredRows": []
+  }
+]

@@ -1,0 +1,10 @@
+graph TD
+  package__ankhorage_secrets["@ankhorage/secrets"]
+  entrypoint_src_capabilities_index_ts["src/capabilities/index.ts"]
+  package__ankhorage_secrets --> entrypoint_src_capabilities_index_ts
+  module_src_capabilities_index_ts["src/capabilities/index.ts"]
+  module_tests_capabilities_test_ts["tests/capabilities.test.ts"]
+  package__ankhorage_secrets -.-> module_tests_capabilities_test_ts
+  module_tests_capabilities_test_ts --> module_src_capabilities_index_ts
+  module_tests_standalone_test_ts["tests/standalone.test.ts"]
+  package__ankhorage_secrets -.-> module_tests_standalone_test_ts

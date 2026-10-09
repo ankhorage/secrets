@@ -1,0 +1,234 @@
+{
+  "packageName": "@ankhorage/secrets",
+  "packageId": "@ankhorage/secrets",
+  "description": "Provider-neutral secret-store capability catalog for Ankhorage.",
+  "collaborators": null,
+  "donation": null,
+  "badges": [
+    {
+      "id": "license",
+      "label": "license",
+      "value": "MIT",
+      "color": "2563eb"
+    },
+    {
+      "id": "npm",
+      "label": "npm",
+      "value": "v0.2.0",
+      "color": "cb3837"
+    },
+    {
+      "id": "runtime",
+      "label": "runtime",
+      "value": "bun",
+      "color": "f59e0b"
+    },
+    {
+      "id": "typescript",
+      "label": "typescript",
+      "value": "strict",
+      "color": "2563eb"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "prettier",
+      "label": "prettier",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "build",
+      "label": "build",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "tests",
+      "label": "tests",
+      "value": "checked",
+      "color": "0a7f3f"
+    },
+    {
+      "id": "docs",
+      "label": "paradox",
+      "value": "canonical",
+      "color": "0a7f3f"
+    }
+  ],
+  "usage": {
+    "packageName": "@ankhorage/secrets",
+    "command": "ankh secrets --help"
+  },
+  "usageEntries": [],
+  "exampleCount": 0,
+  "findings": [],
+  "config": null,
+  "entrypoints": [
+    "src/capabilities/index.ts"
+  ],
+  "modules": [
+    {
+      "path": "src/capabilities/index.ts",
+      "isEntrypoint": true,
+      "dependencies": [],
+      "exports": [
+        "CAPABILITIES"
+      ]
+    },
+    {
+      "path": "tests/capabilities.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/capabilities/index.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "tests/standalone.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": []
+    }
+  ],
+  "exports": [
+    {
+      "name": "CAPABILITIES",
+      "title": null,
+      "description": "Publish provider-neutral, value-free secret metadata operations for discovery and binding.",
+      "isReadme": false,
+      "see": [],
+      "security": [],
+      "kind": "value",
+      "modulePath": "src/capabilities/index.ts",
+      "sourceLocation": {
+        "filePath": "src/capabilities/index.ts",
+        "line": 4,
+        "column": 14
+      },
+      "exportPaths": [
+        "src/capabilities/index.ts"
+      ],
+      "relatedSymbols": [],
+      "signatures": [],
+      "members": [],
+      "structuredRows": []
+    }
+  ],
+  "components": [],
+  "sourceFunctions": [],
+  "sequenceScenarios": [],
+  "graphs": {
+    "imports": [
+      {
+        "fromPath": "tests/capabilities.test.ts",
+        "toPath": "src/capabilities/index.ts",
+        "sourcePath": "tests/capabilities.test.ts"
+      }
+    ],
+    "calls": [
+      {
+        "fromSymbol": "tests/capabilities.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromSymbol": "tests/capabilities.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromSymbol": "tests/capabilities.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromSymbol": "tests/capabilities.test.ts",
+        "toSymbol": "isCapabilityCatalog",
+        "callExpression": "isCapabilityCatalog",
+        "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromSymbol": "tests/capabilities.test.ts",
+        "toSymbol": "normalizeCapabilityCatalog",
+        "callExpression": "normalizeCapabilityCatalog",
+        "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "fileURLToPath",
+        "callExpression": "fileURLToPath",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "mkdtemp",
+        "callExpression": "mkdtemp",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "join",
+        "callExpression": "join",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "tmpdir",
+        "callExpression": "tmpdir",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "run",
+        "callExpression": "run",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "readdir",
+        "callExpression": "readdir",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "mkdir",
+        "callExpression": "mkdir",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "writeFile",
+        "callExpression": "writeFile",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "tests/standalone.test.ts"
+      },
+      {
+        "fromSymbol": "tests/standalone.test.ts",
+        "toSymbol": "rm",
+        "callExpression": "rm",
+        "sourcePath": "tests/standalone.test.ts"
+      }
+    ],
+    "typeReferences": [],
+    "componentComposition": []
+  }
+}
