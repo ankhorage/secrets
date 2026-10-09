@@ -1,0 +1,272 @@
+{
+  "name": "@ankhorage/secrets",
+  "version": "0.1.0",
+  "description": "Provider-neutral secret-store capability catalog for Ankhorage.",
+  "license": "MIT",
+  "homepage": "https://github.com/ankhorage/secrets#readme",
+  "bugs": {
+    "url": "https://github.com/ankhorage/secrets/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankhorage/secrets.git"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "keywords": [
+    "ankhorage",
+    "capabilities",
+    "metadata",
+    "secret-store",
+    "secrets"
+  ],
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "exports": {
+    "./capabilities": {
+      "types": "./dist/capabilities/index.d.ts",
+      "import": "./dist/capabilities/index.js",
+      "default": "./dist/capabilities/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "ankh": {
+    "category": "secrets",
+    "capabilities": [
+      {
+        "id": "secrets.list",
+        "owner": "@ankhorage/secrets",
+        "access": [
+          "invoke"
+        ],
+        "binding": {
+          "kind": "action",
+          "bindableAs": [
+            "target"
+          ]
+        },
+        "label": "List secrets",
+        "description": "List secret metadata without exposing secret values.",
+        "input": {
+          "schema": {
+            "type": "object",
+            "required": [
+              "scope"
+            ],
+            "properties": {
+              "scope": {
+                "type": "object",
+                "required": [
+                  "projectId",
+                  "environment"
+                ],
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "environment": {
+                    "type": "string"
+                  }
+                }
+              },
+              "kind": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "output": {
+          "schema": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "ref",
+                "scope",
+                "kind",
+                "configuredFields",
+                "createdAt",
+                "updatedAt"
+              ],
+              "properties": {
+                "ref": {
+                  "type": "string"
+                },
+                "scope": {
+                  "type": "object",
+                  "required": [
+                    "projectId",
+                    "environment"
+                  ],
+                  "properties": {
+                    "projectId": {
+                      "type": "string"
+                    },
+                    "environment": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "kind": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "configuredFields": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "createdAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "updatedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "id": "secrets.getMetadata",
+        "owner": "@ankhorage/secrets",
+        "access": [
+          "invoke"
+        ],
+        "binding": {
+          "kind": "action",
+          "bindableAs": [
+            "target"
+          ]
+        },
+        "label": "Get secret metadata",
+        "description": "Get metadata for one secret without exposing its values.",
+        "input": {
+          "schema": {
+            "type": "object",
+            "required": [
+              "scope",
+              "ref"
+            ],
+            "properties": {
+              "scope": {
+                "type": "object",
+                "required": [
+                  "projectId",
+                  "environment"
+                ],
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "environment": {
+                    "type": "string"
+                  }
+                }
+              },
+              "ref": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "output": {
+          "schema": {
+            "type": "object",
+            "required": [
+              "ref",
+              "scope",
+              "kind",
+              "configuredFields",
+              "createdAt",
+              "updatedAt"
+            ],
+            "properties": {
+              "ref": {
+                "type": "string"
+              },
+              "scope": {
+                "type": "object",
+                "required": [
+                  "projectId",
+                  "environment"
+                ],
+                "properties": {
+                  "projectId": {
+                    "type": "string"
+                  },
+                  "environment": {
+                    "type": "string"
+                  }
+                }
+              },
+              "kind": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "configuredFields": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "createdAt": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "updatedAt": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "dependencies": {
+    "@ankhorage/capability": "^0.2.1",
+    "@ankhorage/contracts": "^25.0.1"
+  },
+  "devDependencies": {
+    "@ankhorage/devtools": "^2.3.9",
+    "@ankhorage/paradox": "^0.3.2",
+    "@types/bun": "^1.4.2",
+    "@types/node": "^26.6.5",
+    "typescript": "^6.0.3"
+  },
+  "scripts": {
+    "build": "rm -rf dist tsconfig.tsbuildinfo && bun x tsc -p tsconfig.build.json",
+    "check-types": "bun run typecheck",
+    "typecheck": "bun x tsc --noEmit -p tsconfig.json",
+    "test": "bun test",
+    "test:standalone": "bun run build && bun test tests/standalone.test.ts",
+    "prepack": "bun run build",
+    "docs": "paradox",
+    "lint": "ankhorage-eslint . --max-warnings=0",
+    "lint:fix": "ankhorage-eslint . --fix --max-warnings=0",
+    "format": "ankhorage-prettier --write .",
+    "format:check": "ankhorage-prettier --check .",
+    "knip:check": "ankhorage-knip",
+    "changeset": "ankhorage-changeset",
+    "changeset:status": "ankhorage-changeset status --since=origin/main",
+    "version-packages": "ankhorage-changeset version"
+  },
+  "packageManager": "bun@1.4.2"
+}
