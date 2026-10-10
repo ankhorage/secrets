@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.0",
+      "value": "v0.3.0",
       "color": "cb3837"
     },
     {
@@ -81,10 +81,45 @@
       ]
     },
     {
+      "path": "src/port/index.ts",
+      "isEntrypoint": false,
+      "dependencies": [],
+      "exports": [
+        "KnownSecretStoreProvider",
+        "normalizeSecretRef",
+        "normalizeSecretScope",
+        "SecretCreateInput",
+        "SecretGetMetadataInput",
+        "SecretListInput",
+        "SecretMetadata",
+        "SecretPayload",
+        "SecretRef",
+        "SecretRemoveInput",
+        "SecretReplaceInput",
+        "SecretResolveInput",
+        "SecretScope",
+        "SecretStoreAdapter",
+        "SecretStoreError",
+        "SecretStoreErrorCode",
+        "SecretStoreOkResult",
+        "SecretStoreProvider",
+        "SecretStoreResult",
+        "validateSecretPayload"
+      ]
+    },
+    {
       "path": "tests/capabilities.test.ts",
       "isEntrypoint": false,
       "dependencies": [
         "src/capabilities/index.ts"
+      ],
+      "exports": []
+    },
+    {
+      "path": "tests/port.test.ts",
+      "isEntrypoint": false,
+      "dependencies": [
+        "src/port/index.ts"
       ],
       "exports": []
     },
@@ -128,6 +163,11 @@
         "fromPath": "tests/capabilities.test.ts",
         "toPath": "src/capabilities/index.ts",
         "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromPath": "tests/port.test.ts",
+        "toPath": "src/port/index.ts",
+        "sourcePath": "tests/port.test.ts"
       }
     ],
     "calls": [
@@ -160,6 +200,36 @@
         "toSymbol": "normalizeCapabilityCatalog",
         "callExpression": "normalizeCapabilityCatalog",
         "sourcePath": "tests/capabilities.test.ts"
+      },
+      {
+        "fromSymbol": "tests/port.test.ts",
+        "toSymbol": "describe",
+        "callExpression": "describe",
+        "sourcePath": "tests/port.test.ts"
+      },
+      {
+        "fromSymbol": "tests/port.test.ts",
+        "toSymbol": "test",
+        "callExpression": "test",
+        "sourcePath": "tests/port.test.ts"
+      },
+      {
+        "fromSymbol": "tests/port.test.ts",
+        "toSymbol": "expect",
+        "callExpression": "expect",
+        "sourcePath": "tests/port.test.ts"
+      },
+      {
+        "fromSymbol": "tests/port.test.ts",
+        "toSymbol": "readFile",
+        "callExpression": "readFile",
+        "sourcePath": "tests/port.test.ts"
+      },
+      {
+        "fromSymbol": "tests/port.test.ts",
+        "toSymbol": "fileURLToPath",
+        "callExpression": "fileURLToPath",
+        "sourcePath": "tests/port.test.ts"
       },
       {
         "fromSymbol": "tests/standalone.test.ts",

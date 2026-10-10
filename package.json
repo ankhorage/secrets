@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/secrets",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Provider-neutral secret-store capability catalog for Ankhorage.",
   "license": "MIT",
   "homepage": "https://github.com/ankhorage/secrets#readme",

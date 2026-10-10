@@ -3,8 +3,13 @@ graph TD
   entrypoint_src_capabilities_index_ts["src/capabilities/index.ts"]
   package__ankhorage_secrets --> entrypoint_src_capabilities_index_ts
   module_src_capabilities_index_ts["src/capabilities/index.ts"]
+  module_src_port_index_ts["src/port/index.ts"]
+  package__ankhorage_secrets -.-> module_src_port_index_ts
   module_tests_capabilities_test_ts["tests/capabilities.test.ts"]
   package__ankhorage_secrets -.-> module_tests_capabilities_test_ts
   module_tests_capabilities_test_ts --> module_src_capabilities_index_ts
+  module_tests_port_test_ts["tests/port.test.ts"]
+  package__ankhorage_secrets -.-> module_tests_port_test_ts
+  module_tests_port_test_ts --> module_src_port_index_ts
   module_tests_standalone_test_ts["tests/standalone.test.ts"]
   package__ankhorage_secrets -.-> module_tests_standalone_test_ts

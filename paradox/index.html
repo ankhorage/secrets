@@ -138,7 +138,7 @@
       <div class="summary">
         <div><strong>1</strong><span class="muted">public exports</span></div>
         <div><strong>0</strong><span class="muted">components</span></div>
-        <div><strong>3</strong><span class="muted">modules</span></div>
+        <div><strong>5</strong><span class="muted">modules</span></div>
         <div><strong>1</strong><span class="muted">entrypoints</span></div>
       </div>
       <h3>Entrypoints</h3>
@@ -155,10 +155,20 @@
     <p class="muted">Configured entrypoint</p>
     <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
     <p><strong>Exports:</strong> <code>CAPABILITIES</code></p>
+  </article><article class="item" data-search="src/port/index.ts KnownSecretStoreProvider normalizeSecretRef normalizeSecretScope SecretCreateInput SecretGetMetadataInput SecretListInput SecretMetadata SecretPayload SecretRef SecretRemoveInput SecretReplaceInput SecretResolveInput SecretScope SecretStoreAdapter SecretStoreError SecretStoreErrorCode SecretStoreOkResult SecretStoreProvider SecretStoreResult validateSecretPayload">
+    <h3>src/port/index.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+    <p><strong>Exports:</strong> <code>KnownSecretStoreProvider</code>, <code>normalizeSecretRef</code>, <code>normalizeSecretScope</code>, <code>SecretCreateInput</code>, <code>SecretGetMetadataInput</code>, <code>SecretListInput</code>, <code>SecretMetadata</code>, <code>SecretPayload</code>, <code>SecretRef</code>, <code>SecretRemoveInput</code>, <code>SecretReplaceInput</code>, <code>SecretResolveInput</code>, <code>SecretScope</code>, <code>SecretStoreAdapter</code>, <code>SecretStoreError</code>, <code>SecretStoreErrorCode</code>, <code>SecretStoreOkResult</code>, <code>SecretStoreProvider</code>, <code>SecretStoreResult</code>, <code>validateSecretPayload</code></p>
   </article><article class="item" data-search="tests/capabilities.test.ts src/capabilities/index.ts">
     <h3>tests/capabilities.test.ts</h3>
     <p class="muted">Referenced module</p>
     <p><strong>Dependencies:</strong> <code>src/capabilities/index.ts</code></p>
+    <p><strong>Exports:</strong> <span class="empty">None</span></p>
+  </article><article class="item" data-search="tests/port.test.ts src/port/index.ts">
+    <h3>tests/port.test.ts</h3>
+    <p class="muted">Referenced module</p>
+    <p><strong>Dependencies:</strong> <code>src/port/index.ts</code></p>
     <p><strong>Exports:</strong> <span class="empty">None</span></p>
   </article><article class="item" data-search="tests/standalone.test.ts">
     <h3>tests/standalone.test.ts</h3>
@@ -199,9 +209,14 @@
   entrypoint_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
   package__ankhorage_secrets --&gt; entrypoint_src_capabilities_index_ts
   module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  module_src_port_index_ts[&quot;src/port/index.ts&quot;]
+  package__ankhorage_secrets -.-&gt; module_src_port_index_ts
   module_tests_capabilities_test_ts[&quot;tests/capabilities.test.ts&quot;]
   package__ankhorage_secrets -.-&gt; module_tests_capabilities_test_ts
   module_tests_capabilities_test_ts --&gt; module_src_capabilities_index_ts
+  module_tests_port_test_ts[&quot;tests/port.test.ts&quot;]
+  package__ankhorage_secrets -.-&gt; module_tests_port_test_ts
+  module_tests_port_test_ts --&gt; module_src_port_index_ts
   module_tests_standalone_test_ts[&quot;tests/standalone.test.ts&quot;]
   package__ankhorage_secrets -.-&gt; module_tests_standalone_test_ts
 </div>
@@ -212,9 +227,14 @@
   entrypoint_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
   package__ankhorage_secrets --&gt; entrypoint_src_capabilities_index_ts
   module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  module_src_port_index_ts[&quot;src/port/index.ts&quot;]
+  package__ankhorage_secrets -.-&gt; module_src_port_index_ts
   module_tests_capabilities_test_ts[&quot;tests/capabilities.test.ts&quot;]
   package__ankhorage_secrets -.-&gt; module_tests_capabilities_test_ts
   module_tests_capabilities_test_ts --&gt; module_src_capabilities_index_ts
+  module_tests_port_test_ts[&quot;tests/port.test.ts&quot;]
+  package__ankhorage_secrets -.-&gt; module_tests_port_test_ts
+  module_tests_port_test_ts --&gt; module_src_port_index_ts
   module_tests_standalone_test_ts[&quot;tests/standalone.test.ts&quot;]
   package__ankhorage_secrets -.-&gt; module_tests_standalone_test_ts
 </pre>
@@ -224,17 +244,23 @@
     <p class="muted"><code>diagrams/module-relationships.mmd</code></p>
     <div class="mermaid">graph LR
   module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  module_src_port_index_ts[&quot;src/port/index.ts&quot;]
   module_tests_capabilities_test_ts[&quot;tests/capabilities.test.ts&quot;]
+  module_tests_port_test_ts[&quot;tests/port.test.ts&quot;]
   module_tests_standalone_test_ts[&quot;tests/standalone.test.ts&quot;]
   module_tests_capabilities_test_ts --&gt; module_src_capabilities_index_ts
+  module_tests_port_test_ts --&gt; module_src_port_index_ts
 </div>
     <details>
       <summary>View Mermaid source</summary>
       <pre>graph LR
   module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  module_src_port_index_ts[&quot;src/port/index.ts&quot;]
   module_tests_capabilities_test_ts[&quot;tests/capabilities.test.ts&quot;]
+  module_tests_port_test_ts[&quot;tests/port.test.ts&quot;]
   module_tests_standalone_test_ts[&quot;tests/standalone.test.ts&quot;]
   module_tests_capabilities_test_ts --&gt; module_src_capabilities_index_ts
+  module_tests_port_test_ts --&gt; module_src_port_index_ts
 </pre>
     </details>
   </article><article class="item" data-search="Export graph diagrams/export-graph.mmd">
@@ -242,7 +268,9 @@
     <p class="muted"><code>diagrams/export-graph.mmd</code></p>
     <div class="mermaid">graph LR
   module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  module_src_port_index_ts[&quot;src/port/index.ts&quot;]
   module_tests_capabilities_test_ts[&quot;tests/capabilities.test.ts&quot;]
+  module_tests_port_test_ts[&quot;tests/port.test.ts&quot;]
   module_tests_standalone_test_ts[&quot;tests/standalone.test.ts&quot;]
   export_CAPABILITIES[&quot;CAPABILITIES&quot;]
   module_src_capabilities_index_ts --&gt; export_CAPABILITIES
@@ -251,7 +279,9 @@
       <summary>View Mermaid source</summary>
       <pre>graph LR
   module_src_capabilities_index_ts[&quot;src/capabilities/index.ts&quot;]
+  module_src_port_index_ts[&quot;src/port/index.ts&quot;]
   module_tests_capabilities_test_ts[&quot;tests/capabilities.test.ts&quot;]
+  module_tests_port_test_ts[&quot;tests/port.test.ts&quot;]
   module_tests_standalone_test_ts[&quot;tests/standalone.test.ts&quot;]
   export_CAPABILITIES[&quot;CAPABILITIES&quot;]
   module_src_capabilities_index_ts --&gt; export_CAPABILITIES
