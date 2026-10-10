@@ -6,7 +6,7 @@ import { expect, test } from 'bun:test';
 
 const repositoryRoot = fileURLToPath(new URL('..', import.meta.url));
 
-test('installs the packed package into a fresh consumer and imports its capability catalog', async () => {
+test('installs the packed package into a fresh consumer and imports its public entry points', async () => {
   const temporaryDirectory = await mkdtemp(join(tmpdir(), 'secrets-consumer-'));
   const packageDirectory = join(temporaryDirectory, 'package');
   const consumerDirectory = join(temporaryDirectory, 'consumer');
@@ -25,7 +25,7 @@ test('installs the packed package into a fresh consumer and imports its capabili
       [
         'bun',
         '--eval',
-        "import { CAPABILITIES } from '@ankhorage/secrets/capabilities'; if (CAPABILITIES.length !== 2) process.exit(1);",
+        "import { CAPABILITIES } from '@ankhorage/secrets/capabilities'; import { normalizeSecretRef } from '@ankhorage/secrets/port'; if (CAPABILITIES.length !== 2 || normalizeSecretRef('/services/atlas/').data !== 'services/atlas') process.exit(1);",
       ],
       consumerDirectory,
     );
