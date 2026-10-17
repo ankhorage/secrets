@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1
+
+### Patch Changes
+
+- f002544: Align the published secret-store port and capability catalog with Contracts 26 and Capability 0.2.2.
+
 ## 0.3.0
 
 ### Minor Changes
