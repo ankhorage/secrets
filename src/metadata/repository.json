@@ -1,1 +1,41 @@
-{"schemaVersion":1,"kind":"library","title":"Ankhorage Secrets","summary":"Defines provider-neutral secret-store capability descriptors and portable secret-store contract entrypoints.","purpose":"Let independent applications and adapters discover value-free secret metadata operations without coupling to a particular secret-store provider.","domain":"secret-store capability discovery","responsibilities":["Publish capability descriptors for listing and reading secret metadata without exposing secret values.","Expose the canonical secret-store contract types and normalization helpers at a dedicated public subpath.","Describe the secret scope, reference, provider, kind, and configured-field shapes used by capability consumers."],"boundaries":["Does not store, resolve, create, replace, or remove secret values.","Does not implement a provider-specific secret-store adapter.","Does not grant secret access or decide application authorization policy."],"audience":["Applications and tooling that discover secret metadata operations.","Provider adapter authors implementing the portable secret-store contract."],"useCases":["Discover the supported list and metadata capability shapes before binding a secret-store provider.","Import portable secret-store types and normalization helpers through the package port entrypoint.","Present configured secret metadata without exposing secret payload values."],"architecture":{"role":"Provider-neutral capability catalog and contract facade for secret-store integrations.","invariants":["Capability descriptors are value-free and do not expose secret payloads.","Provider-specific behavior remains behind independently implemented secret-store adapters.","Consumers use published capability and port subpaths rather than sibling source imports."]},"constraints":{"limitations":["The package describes only list and metadata discovery operations as executable capabilities.","Secret values and provider credentials remain outside this package."]}}
+{
+  "schemaVersion": 1,
+  "kind": "library",
+  "title": "Ankhorage Secrets",
+  "summary": "Defines provider-neutral secret-store capability descriptors and portable secret-store contract entrypoints.",
+  "purpose": "Let independent applications and adapters discover value-free secret metadata operations without coupling to a particular secret-store provider.",
+  "domain": "secret-store capability discovery",
+  "responsibilities": [
+    "Publish capability descriptors for listing and reading secret metadata without exposing secret values.",
+    "Expose the canonical secret-store contract types and normalization helpers at a dedicated public subpath.",
+    "Describe the secret scope, reference, provider, kind, and configured-field shapes used by capability consumers."
+  ],
+  "boundaries": [
+    "Does not store, resolve, create, replace, or remove secret values.",
+    "Does not implement a provider-specific secret-store adapter.",
+    "Does not grant secret access or decide application authorization policy."
+  ],
+  "audience": [
+    "Applications and tooling that discover secret metadata operations.",
+    "Provider adapter authors implementing the portable secret-store contract."
+  ],
+  "useCases": [
+    "Discover the supported list and metadata capability shapes before binding a secret-store provider.",
+    "Import portable secret-store types and normalization helpers through the package port entrypoint.",
+    "Present configured secret metadata without exposing secret payload values."
+  ],
+  "architecture": {
+    "role": "Provider-neutral capability catalog and contract facade for secret-store integrations.",
+    "invariants": [
+      "Capability descriptors are value-free and do not expose secret payloads.",
+      "Provider-specific behavior remains behind independently implemented secret-store adapters.",
+      "Consumers use published capability and port subpaths rather than sibling source imports."
+    ]
+  },
+  "constraints": {
+    "limitations": [
+      "The package describes only list and metadata discovery operations as executable capabilities.",
+      "Secret values and provider credentials remain outside this package."
+    ]
+  }
+}
