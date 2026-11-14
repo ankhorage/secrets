@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2
+
+### Patch Changes
+
+- 1d41c1e: Add canonical repository metadata for package discovery and documentation.
+
 ## 0.3.1
 
 ### Patch Changes
